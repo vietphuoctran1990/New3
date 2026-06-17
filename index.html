@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <title>Bảng Sao Của Bé</title>
+  <meta name="theme-color" content="#7c5cfa" />
+
+  <!-- PWA / iOS (iPhone 6s, iOS 15 Safari) -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bảng Sao" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Đầu trang: tổng điểm + mascot -->
+    <header class="hero">
+      <div class="hero-top">
+        <span id="kidName" class="kid-name">Bé Ngoan</span>
+        <button id="lockBtn" class="lock-btn" aria-label="Cài đặt cho ba mẹ">🔒</button>
+      </div>
+      <div class="mascot" id="mascot">🦄</div>
+      <div class="score-wrap">
+        <div class="score" id="score">0</div>
+        <div class="score-label">⭐ ngôi sao</div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text" id="progressText">Hãy làm việc tốt nhé!</div>
+      </div>
+    </header>
+
+    <!-- Thanh chuyển trang -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="good">😊 Việc tốt</button>
+      <button class="tab" data-tab="bad">😕 Chưa ngoan</button>
+      <button class="tab" data-tab="reward">🎁 Phần thưởng</button>
+    </nav>
+
+    <main>
+      <section id="tab-good" class="tab-panel active">
+        <div class="grid" id="goodGrid"></div>
+      </section>
+
+      <section id="tab-bad" class="tab-panel">
+        <div class="grid" id="badGrid"></div>
+      </section>
+
+      <section id="tab-reward" class="tab-panel">
+        <div class="grid reward-grid" id="rewardGrid"></div>
+      </section>
+    </main>
+
+    <!-- Lịch sử gần đây -->
+    <section class="history">
+      <div class="history-head">
+        <h2>📒 Hôm nay</h2>
+        <button id="undoBtn" class="undo-btn">↩️ Hoàn tác</button>
+      </div>
+      <ul id="historyList" class="history-list"></ul>
+    </section>
+  </div>
+
+  <!-- Hiệu ứng pháo hoa -->
+  <div id="confetti" class="confetti-layer"></div>
+
+  <!-- Bảng thông báo nổi -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Cài đặt (khoá PIN cho ba mẹ) -->
+  <div id="settings" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>⚙️ Cài đặt</h2>
+        <button id="closeSettings" class="close-btn">✕</button>
+      </div>
+      <div id="settingsBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

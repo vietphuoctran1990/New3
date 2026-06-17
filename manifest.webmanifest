@@ -1,0 +1,26 @@
+{
+  "name": "Bảng Sao Của Bé",
+  "short_name": "Bảng Sao",
+  "description": "Chấm điểm việc tốt, đổi phần thưởng cho bé.",
+  "lang": "vi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3eeff",
+  "theme_color": "#7c5cfa",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
