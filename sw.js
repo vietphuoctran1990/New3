@@ -1,5 +1,5 @@
 /* Service worker: cho phép dùng offline sau lần mở đầu tiên. */
-var CACHE = "bang-sao-v1";
+var CACHE = "bang-sao-v2";
 var ASSETS = [
   "./",
   "./index.html",

@@ -2,10 +2,14 @@
 
 Một web app **đơn giản, nhiều màu sắc** giúp ba mẹ chấm điểm cho bé 6–7 tuổi:
 
+- 👨‍👩‍👧 **Nhiều hồ sơ**: tạo nhiều bé, mỗi bé có điểm & lịch sử riêng, chuyển nhanh bằng cách bấm avatar
+- 📷 **Ảnh đại diện**: chọn emoji ngộ nghĩnh **hoặc chụp/đặt ảnh thật** cho bé (ảnh được thu nhỏ, lưu ngay trên máy)
+- 🏆 **Hệ thống cấp độ**: mỗi 20 sao lên 1 cấp, có màn ăn mừng "Lên cấp!"
 - ✅ **Cộng sao** khi bé làm việc tốt / việc nhà (đánh răng, dọn giường, giúp ba mẹ…)
 - ❌ **Trừ sao** khi bé chưa ngoan (cãi lời, mè nheo, nói dối…)
 - 🎁 **Đổi phần thưởng** khi tích đủ sao (que kem, xem hoạt hình, đi công viên…)
-- 🎉 Có hiệu ứng pháo hoa + âm thanh vui mỗi khi được cộng sao
+- 🎉 Hiệu ứng **bắn sao tại chỗ bấm, pháo hoa, linh vật nhảy múa, lời khen** + âm thanh vui
+- 🌈 Nền trời chuyển màu động với mây, bóng bay, ngôi sao bay lơ lửng
 - 📒 Lưu lịch sử trong ngày, có nút **Hoàn tác**
 - 🔒 Khu **Cài đặt** có khoá mật khẩu (mặc định `1234`) để bé không tự sửa
 
@@ -53,11 +57,16 @@ Mở thẳng file `index.html` bằng `file://` vẫn dùng được, chỉ là 
 
 ## ⚙️ Tuỳ chỉnh
 
-Bấm 🔒 ở góc trên (mật khẩu mặc định **1234**) để:
-- Đổi **tên bé** và **linh vật** (emoji)
+**Bấm avatar (góc trái trên)** — không cần mật khẩu — để:
+- Chuyển giữa các bé
+- ➕ Thêm bé mới
+- ✏️ Sửa hồ sơ: đổi **tên**, chọn **emoji** hoặc **📷 chọn ảnh thật** làm avatar
+
+**Bấm ⚙️ (góc phải, mật khẩu mặc định 1234)** để:
+- Thêm/xoá **hồ sơ các bé**
 - Thêm/sửa/xoá danh sách **việc tốt, chưa ngoan, phần thưởng** và số điểm
 - Đổi **mật khẩu**
-- **Đặt lại điểm** hoặc **khôi phục danh sách mặc định**
+- **Đặt lại điểm** của bé đang chọn hoặc **khôi phục danh sách mặc định**
 
 ---
 

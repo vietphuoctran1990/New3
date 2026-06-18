@@ -17,46 +17,56 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Nền động: mây, sao, bóng bay bay lơ lửng -->
+  <div id="bg" class="bg" aria-hidden="true"></div>
+
   <div id="app">
-    <!-- Đầu trang: tổng điểm + mascot -->
+    <!-- Đầu trang -->
     <header class="hero">
       <div class="hero-top">
-        <span id="kidName" class="kid-name">Bé Ngoan</span>
-        <button id="lockBtn" class="lock-btn" aria-label="Cài đặt cho ba mẹ">🔒</button>
+        <button id="profileBtn" class="avatar-btn" aria-label="Đổi hồ sơ">
+          <span class="avatar-ring"></span>
+          <span id="avatarInner" class="avatar-inner">🦄</span>
+          <span class="avatar-switch">▾</span>
+        </button>
+        <div class="who">
+          <span id="kidName" class="kid-name">Bé Ngoan</span>
+          <span id="levelBadge" class="level-badge">Cấp 1 · Ngôi sao nhí</span>
+        </div>
+        <button id="lockBtn" class="lock-btn" aria-label="Cài đặt cho ba mẹ">⚙️</button>
       </div>
+
       <div class="mascot" id="mascot">🦄</div>
+      <div class="speech" id="speech">Chào bé! Hôm nay làm việc tốt nha 💖</div>
+
       <div class="score-wrap">
         <div class="score" id="score">0</div>
         <div class="score-label">⭐ ngôi sao</div>
       </div>
+
       <div class="progress">
-        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+          <span class="progress-rocket" id="progressRocket">🚀</span>
+        </div>
         <div class="progress-text" id="progressText">Hãy làm việc tốt nhé!</div>
       </div>
     </header>
 
     <!-- Thanh chuyển trang -->
     <nav class="tabs">
-      <button class="tab active" data-tab="good">😊 Việc tốt</button>
-      <button class="tab" data-tab="bad">😕 Chưa ngoan</button>
-      <button class="tab" data-tab="reward">🎁 Phần thưởng</button>
+      <button class="tab active" data-tab="good"><span>😊</span>Việc tốt</button>
+      <button class="tab" data-tab="bad"><span>😕</span>Chưa ngoan</button>
+      <button class="tab" data-tab="reward"><span>🎁</span>Phần thưởng</button>
     </nav>
 
     <main>
-      <section id="tab-good" class="tab-panel active">
-        <div class="grid" id="goodGrid"></div>
-      </section>
-
-      <section id="tab-bad" class="tab-panel">
-        <div class="grid" id="badGrid"></div>
-      </section>
-
-      <section id="tab-reward" class="tab-panel">
-        <div class="grid reward-grid" id="rewardGrid"></div>
-      </section>
+      <section id="tab-good" class="tab-panel active"><div class="grid" id="goodGrid"></div></section>
+      <section id="tab-bad" class="tab-panel"><div class="grid" id="badGrid"></div></section>
+      <section id="tab-reward" class="tab-panel"><div class="grid reward-grid" id="rewardGrid"></div></section>
     </main>
 
-    <!-- Lịch sử gần đây -->
+    <!-- Lịch sử -->
     <section class="history">
       <div class="history-head">
         <h2>📒 Hôm nay</h2>
@@ -66,15 +76,45 @@
     </section>
   </div>
 
-  <!-- Hiệu ứng pháo hoa -->
-  <div id="confetti" class="confetti-layer"></div>
-
-  <!-- Bảng thông báo nổi -->
+  <!-- Lớp hiệu ứng -->
+  <div id="confetti" class="confetti-layer" aria-hidden="true"></div>
+  <div id="burst" class="burst-layer" aria-hidden="true"></div>
   <div id="toast" class="toast"></div>
 
-  <!-- Cài đặt (khoá PIN cho ba mẹ) -->
+  <!-- Màn lên cấp -->
+  <div id="levelup" class="levelup hidden" aria-hidden="true">
+    <div class="levelup-card">
+      <div class="levelup-emoji">🏆</div>
+      <div class="levelup-title">LÊN CẤP!</div>
+      <div class="levelup-sub" id="levelupSub">Cấp 2</div>
+    </div>
+  </div>
+
+  <!-- Bảng chọn hồ sơ -->
+  <div id="profileSheet" class="modal hidden">
+    <div class="modal-card sheet">
+      <div class="modal-head">
+        <h2>👨‍👩‍👧 Hồ sơ của bé</h2>
+        <button id="closeProfiles" class="close-btn">✕</button>
+      </div>
+      <div id="profileList" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Sửa hồ sơ -->
+  <div id="profileEdit" class="modal hidden">
+    <div class="modal-card sheet">
+      <div class="modal-head">
+        <h2 id="profileEditTitle">✏️ Sửa hồ sơ</h2>
+        <button id="closeProfileEdit" class="close-btn">✕</button>
+      </div>
+      <div id="profileEditBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Cài đặt (khoá PIN) -->
   <div id="settings" class="modal hidden">
-    <div class="modal-card">
+    <div class="modal-card sheet">
       <div class="modal-head">
         <h2>⚙️ Cài đặt</h2>
         <button id="closeSettings" class="close-btn">✕</button>
@@ -82,6 +122,9 @@
       <div id="settingsBody" class="modal-body"></div>
     </div>
   </div>
+
+  <!-- Input ảnh dùng chung -->
+  <input type="file" id="photoInput" accept="image/*" class="hidden-input" />
 
   <script src="app.js"></script>
 </body>
