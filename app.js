@@ -226,9 +226,11 @@
     rocket.style.left = pct + "%";
   }
 
+  function byPts(a, b) { return a.pts - b.pts; }
+
   function renderGrid(sel, items, type) {
     var grid = $(sel); grid.innerHTML = "";
-    items.forEach(function (it) {
+    items.slice().sort(byPts).forEach(function (it) {
       var b = el("button", "card-btn " + type);
       b.innerHTML = '<span class="emoji">' + it.emoji + "</span>" +
         '<span class="label">' + esc(it.label) + "</span>" +
@@ -242,7 +244,7 @@
 
   function renderRewards(p) {
     var grid = $("#rewardGrid"); grid.innerHTML = "";
-    state.rewards.forEach(function (it) {
+    state.rewards.slice().sort(byPts).forEach(function (it) {
       var ok = p.score >= it.pts;
       var b = el("button", "card-btn reward" + (ok ? " ready" : " locked"));
       b.innerHTML = '<span class="emoji">' + it.emoji + "</span>" +
